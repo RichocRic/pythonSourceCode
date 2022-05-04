@@ -94,7 +94,6 @@ def creationCSVImgs():
                     writer.writerow(dico)    
                 else:
                     writer.writerow(dico)#ajout d'une nouvelle ligne
-                    #res = requests.get(totalUrlImgs, stream = True)
                     rep = chemin+'/'+'IMGS'+'/'+dico["category"]+'/'
                     #print('le répertoire complet de image est: ',rep)
                     os.system('wget -P {0} {1}'.format(rep,totalUrlImgs)) #Enregistrement de la vignette.
@@ -103,14 +102,6 @@ def creationCSVImgs():
             
 creationCSVImgs()        
         
-        
-        
-    
-    
 
-#if __name__ == "__main__":
-    #print("Totale lien livre :", len(liens))
-    #print("liens des livres :", liens)
-    #creationCSVImgs()
     
     
