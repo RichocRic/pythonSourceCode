@@ -90,7 +90,7 @@ def creationCSVImgs():
                 videCsv = os.stat(chemin+"/"+'CSV'+'/'+nomFichier).st_size == 0# vérification de la taille du fichier évite de réecrire l'entete.
                 writer = csv.DictWriter(f, delimiter=',',fieldnames=entetCsv)
                 if videCsv:
-                    writer.writeheader()
+                    writer.writeheader()#écriture entete du csv
                     writer.writerow(dico)    
                 else:
                     writer.writerow(dico)#ajout d'une nouvelle ligne
