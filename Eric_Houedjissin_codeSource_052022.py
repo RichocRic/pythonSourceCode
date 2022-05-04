@@ -54,7 +54,7 @@ def creationCSVImgs():
         response = requests.get(link)
         if response.ok:
             
-            soup2 = BeautifulSoup(response.text, 'lxml')
+            soup2 = BeautifulSoup(response.text, 'lxml')#
 
             data = soup2.find_all('td')
             for row_item in data:
@@ -65,6 +65,7 @@ def creationCSVImgs():
                        
                 else:
                     #remplissage du dictionnaire pour alimenter les C.S.V et la créations des vignettes
+                    #TO DO SOLUTION pour les replaces
                     note = soup2.find("p", attrs={"class": "star-rating"}).attrs
                     note = str(note).replace("{'class': ['star-rating', '","").replace("']}","").strip()
                     dico["product_page_url"] = link
@@ -97,9 +98,7 @@ def creationCSVImgs():
                     rep = chemin+'/'+'IMGS'+'/'+dico["category"]+'/'
                     #print('le répertoire complet de image est: ',rep)
                     os.system('wget -P {0} {1}'.format(rep,totalUrlImgs)) #Enregistrement de la vignette.
-                               
-                
-            
+                                          
 creationCSVImgs()        
         
 
